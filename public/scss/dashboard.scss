@@ -1,0 +1,40 @@
+#dashboard {
+  position: absolute;
+  float: left;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  height: 90vh;
+  max-width: 100%;
+
+  #frame {
+    display: block;
+    margin: 0;
+    width: 100vw;
+    height: 90vh;
+    pointer-events: none;
+    border: none;
+  }
+
+
+}
+#appBar{
+  align-items: flex-start;
+}
+
+.toolBar {
+  flex-grow: 3;
+  float: left;
+  Button {
+    width: 10vw;
+    position: absolute;
+    left: 0;
+  }
+
+  h3 {
+    width: 90vw;
+    text-align: center;
+
+  }
+}
+

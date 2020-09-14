@@ -8,8 +8,23 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.4.4",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "@material-ui/core": "^4.9.9",
+    "@material-ui/icons": "^4.9.1",
+    "@types/next": "^9.0.0",
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "axios": "^0.19.2",
+    "google-map-react": "^1.1.7",
+    "mqtt": "^4.1.0",
+    "next": "^9.4.4",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-material-ui-carousel": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "typescript": "^3.8.3"
   }
 }
