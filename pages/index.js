@@ -15,7 +15,7 @@ export default function Index() {
             description: "Dashboard"
         },
         {
-            url: "http://www.wikipedia.de",
+            url: "http://wiki.stec.fh-wedel.de/",
             description: "STEC wiki"
         },
         {

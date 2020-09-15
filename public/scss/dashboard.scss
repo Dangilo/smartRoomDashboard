@@ -4,15 +4,14 @@
   top: 10vh;
   left: 0;
   right: 0;
-  height: 90vh;
+  height: 100%;
   max-width: 100%;
 
   #frame {
     display: block;
     margin: 0;
     width: 100vw;
-    height: 90vh;
-    pointer-events: none;
+    height: 100%;
     border: none;
   }
 
