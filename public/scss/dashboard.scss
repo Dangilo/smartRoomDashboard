@@ -14,11 +14,16 @@
     height: 100%;
     border: none;
   }
-
-
 }
 #appBar{
   align-items: flex-start;
+  @media (max-width: 600px){
+    h2{
+      font-size: 1.5em;
+      text-align: center;
+      padding-top: 1vh;
+    }
+  }
 }
 
 .toolBar {

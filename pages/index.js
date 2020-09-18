@@ -6,35 +6,16 @@ import Carousel from "react-material-ui-carousel";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Header from "../components/Header";
+import Urls from "../public/urls";
 
 export default function Index() {
-
-    let items = [
-        {
-            url: "http://192.168.178.38:1880/ui/#!/0?socketid=ErzmKfwOANkECKcHAAAF",
-            description: "Dashboard"
-        },
-        {
-            url: "http://wiki.stec.fh-wedel.de/",
-            description: "STEC wiki"
-        },
-        {
-            url: "http://192.168.178.38:1880/#flow/6fff9a44.41d484",
-            description: "Node-Red Flow"
-        },
-        {
-            url: "http://www.fh-wedel.de",
-            description: "SmartRoom Steuerung"
-        }
-    ];
-
     return (
         <Layout>
             <Header/>
             <Box id="home">
                 <Carousel className="carousel" navButtonsAlwaysVisible={true}
                           interval={8000}>
-                    {items.map((item, i) => <Item key={i} item={item}/>)}
+                    {Urls.getUrls().map((item, i) => <Item key={i} item={item}/>)}
                 </Carousel>
             </Box>
         </Layout>
