@@ -1,30 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Smart Room Dashboard
 
-## Getting Started
+## Inhaltsverzeichnis
+1. [Einführung](#introduction)
+2. [Techstack](#techstack)
+3. [Wie starte ich das Dashboard?](#start)
+4. [Konfiguration](#Konfigurationen)
 
-First, run the development server:
+ - Einführung (wozu das ganze?)
+ - Tech stack
+ - wo liegt was?
+ - starten der Anwendung inkl. zugriff
+ - neues Element hinzufügen
+ - Projektaufbau
 
-```bash
-npm run dev
-# or
-yarn dev
+## Einführung <a name="introduction"></a> 
+Das Projekt stellt ein Dashboard für den Smart Room der FH Wedel da. Es ist zeigt ausgewählte Webseiten an und erlaubt Interaktionen mit diesen. Hierdurch ist für Besucher und Nutzer des Smart Rooms ein einfacher Überblick über die Funktionen des Smart Rooms gegeben. 
+
+## Techstack <a name="techstack"></a>
+
+- [Nextjs](https://nextjs.org/docs/getting-started) als Framework für serverseitig gerenderte React Apps
+- [React](https://reactjs.org/) als Javascript Bibliothek für Benutzeroberfächen
+- [Typescript](https://www.typescriptlang.org/) als Typenbasierte JavaScript Erweiterung
+- CSS
+
+## Wie starte ich das Dashboard?<a name="techstack"></a>
+
+### Voraussetzungen:
+
+ - Git Projekt lokal geclont 
+ - Administrator Rechte auf dem System
+ - Akutelle NPM version ( update mit `npm install -g npm` )
+	 ```Bash
+	 npm install -g npm
+	 ```
+ - Aktuelle Node.js Version, die Version kann mit folgenden Befehlen auf den neusten Stand gebracht werden
+	 ```Bash
+	 #NPM cache löschen
+	 sudo npm cache clean -f
+	 
+	 #n (verwaltet die NODE Version) installieren
+	 sudo npm install -g n
+	 
+	 #die letzte stabile Version installieren
+	 sudo n stable
+	 ```
+	 
+### Starten für den Dauerbetrieb
+
+Für den Start im Dauerbetrieb, muss das Projekt zu erst gebaut und dann gestartet werden. Hierzu wechselt man im Terminal auf den Projektpfad und nutzt folgende 
+Befehle:
+
+```Bash
+#Projekt bauen:
+npm run build
+
+#Projekt starten:
+npm run start 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Das Dashboard ist jetzt standardmäßig unter Port 3000 erreichbar. 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+### Starten während der Entwicklung
 
-To learn more about Next.js, take a look at the following resources:
+Während der Entwicklung gibt Next.js die Möglichkeit, den Sever mit einer "Hot-Reload" Funktion zu starten. Dies hat den Vorteil, dass Änderungen am Projekt direkt sichtbar werden, ohne das neu gebaut werden muss.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+#starten des Server im Entwicklungsmodus
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Konfigurationen <a name="configuration"></a> 
 
-## Deploy on Vercel
+#### Neue Seiten hinzufügen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Individuellen Port wählen
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In der Package.json kann der Port, auf dem der Server erreichbar ist geändert werden. Gibt man diesen nicht explizit an, ist es der Port 3000.  Hierzu können die Befehle `dev` und `build` um den Parameter `-p PORTNUMMER` erweitert werden.
+
+```Json
+"scripts": {  
+  "dev": "next dev -p 8080",  
+  "build": "next build",  
+  "start": "next start -p 80"  
+},
+```
