@@ -2,10 +2,9 @@
 
 1. [Einführung](#introduction)
 2. [Techstack](#techstack)
-3. [Wie starte ich das Dashboard?](#start)
-4. [Konfiguration](#Konfigurationen)
-
- - wo liegt was?
+3. [Projektaufbau](#projektaufbau)
+4. [Wie starte ich das Dashboard?](#start)
+5. [Konfiguration](#Konfigurationen)
  
 ## Einführung <a name="introduction"></a> 
 Das Projekt stellt ein Dashboard für den Smart Room der FH Wedel da. Es ist zeigt ausgewählte Webseiten an und erlaubt Interaktionen mit diesen. Hierdurch ist für Besucher und Nutzer des Smart Rooms ein einfacher Überblick über die Funktionen des Smart Rooms gegeben. 
@@ -17,6 +16,18 @@ Das Projekt stellt ein Dashboard für den Smart Room der FH Wedel da. Es ist zei
 - [MaterialUI](https://material-ui.com/)
 - JavaScript
 - CSS
+- [NPM](https://www.npmjs.com/) als Paketmanager (Alternativ kann auch [YARN](https://yarnpkg.com/) genutzt werden.)
+
+## Projektaufbau <a name="projektaufbau"></a>
+Für das Projekt gibt es drei wichtige Ordner. 
+1. Components
+	Enthält wiederverwendbare Komponenten. Im diesem Projekt liegen dort das Layout und der Header. Das Layout sorgt 		dafür, das von überall aus auf z.B. die Primär und Sekundär Farben zugegriffen werden kann. Der Header unterscheidet zwischen den Seiten und ändert sich dementsprechend.	
+2. Pages
+	Im Pages Ordner sind, wie der Name schon vermuten lässt, die einzelnen Seiten vertreten. `Index.js` ist standardmäßig die Startseite. `dashboard.js` öffnet sich, wenn ein Element auf der Startseite ausgewählt wird. In `_app.js` werden zudem die SCSS Dateien importiert.
+3. Public
+	Der Public Ordner enthält alle Statischen Komponenten (Bspw. Bilder). In diesem Projekt liegen dort die SCSS Dateien, sowie die `urls.js` die die konfigurierbaren URLs enthält.
+
+In der `Package.json` sind zudem alle Abhängigkeiten enthalten. Diese können über `npm install` bei Bedarf erweitert werden.
 
 
 ## Wie starte ich das Dashboard?<a name="techstack"></a>
@@ -41,7 +52,7 @@ Das Projekt stellt ein Dashboard für den Smart Room der FH Wedel da. Es ist zei
 	 sudo n stable
 	 ```
 	 
-### Starten für den Dauerbetrieb
+### Starten für den Dauerbetrieb<a name="dauerbetrieb"></a>
 
 Für den Start im Dauerbetrieb, muss das Projekt zu erst gebaut und dann gestartet werden. Hierzu wechselt man im Terminal auf den Projektpfad und nutzt folgende 
 Befehle:
@@ -66,12 +77,14 @@ Während der Entwicklung gibt Next.js die Möglichkeit, den Sever mit einer "Hot
 npm run dev
 ```
 
+Im Development Modus kann es passieren, dass nicht alle CSS Dateien vor dem Start geladen werden. Dies hat zu Folge, dass die Pfeile vom Karussell verrutschen. Im Produktionsmodus (`npm start`) kann dies aber nicht passieren, da das Projekt vorher gebaut wird (siehe [Starten für den Dauerbetrieb](#dauerbetrieb)).
+
 ## Konfigurationen <a name="configuration"></a> 
 
 #### URLs konfigurieren
 Die URLs, die auf dem Dashboard angezeigt werden können unter `public/urls.js` angepasst werden. Diese können beliebig geändert und erweitert werden. 
 
-```Typescript
+```JavaScript
 static items = [  
     {
 	    url: "http://192.168.178.38:1880/ui/#!/0?socketid=ErzmKfwOANkECKcHAAAF",

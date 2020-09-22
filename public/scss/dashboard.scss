@@ -15,33 +15,6 @@
     border: none;
   }
 }
-#appBar{
-  align-items: flex-start;
-  @media (max-width: 600px){
-    .back_icon{
-      margin-left: 5px;
-    }
-    h2{
-      font-size: 1.5em;
-      text-align: center;
-      padding-top: 1vh;
-    }
-  }
-}
 
-.toolBar {
-  flex-grow: 3;
-  float: left;
-  Button {
-    width: 10vw;
-    position: absolute;
-    left: 0;
-  }
 
-  h3 {
-    width: 90vw;
-    text-align: center;
-
-  }
-}
 

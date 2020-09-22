@@ -11,7 +11,7 @@ import Urls from "../public/urls";
 export default function Index() {
     return (
         <Layout>
-            <Header/>
+            <Header isDashboard={false}/>
             <Box id="home">
                 <Carousel className="carousel" navButtonsAlwaysVisible={true}
                           interval={8000}>
